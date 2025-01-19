@@ -1,0 +1,20 @@
+{{ block "Head" . }}
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+<link href="/files/styles.css" rel="stylesheet">
+{{ end }}
+
+{{ block "Header" . }}
+<header>
+    <a href="/">
+        <h1>Muistio sovellus</h1>
+    </a>
+</header>
+<nav>
+    <a href="/">
+        <h2>Etusivu</h2>
+    </a>
+    <a href="/addNewMemo">
+        <h2>Lisää uusi</h2>
+    </a>
+</nav>
+{{ end }}
