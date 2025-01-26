@@ -10,6 +10,13 @@
     <body>
         {{ template "Header" }}
         <main id="main">
+            <form hx-post="/api/addNewMemo" hx-on::after-swap="document.querySelector('form').reset()" hx-swap="none">
+                <input type="text" name="title" placeholder="Otsikko">
+                <br>
+                <textarea name="muistiinpano" rows="20" cols="60" placeholder="Muistiinpano"></textarea>
+                <br>
+                <button>Lisää muistiinpano</button>
+            </form>
         </main>
     </body>
 </html>

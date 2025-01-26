@@ -34,6 +34,10 @@ func renderAddNewMemoPage(w http.ResponseWriter, r *http.Request){
     pageTempl.ExecuteTemplate(w, "AddNewMemoPage", nil)
 }
 
+func addNewMemo(w http.ResponseWriter, r *http.Request){
+    w.WriteHeader(400)
+}
+ 
 func main(){
     /*TODO:
     app johon voi tallentaa: otsikon, tekstiä ja kansion.
@@ -53,5 +57,9 @@ func main(){
     handler.Handle("GET /files/styles.css", http.StripPrefix("/files", http.FileServer(http.Dir("css/"))))
     //TODO: lisää sivu
 
+    // api
+    handler.HandleFunc("POST /api/addNewMemo", addNewMemo)
+
+    log.Printf("web server started on port%s\n", server.Addr)
     log.Fatal(server.ListenAndServe())
 }
