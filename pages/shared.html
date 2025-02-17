@@ -18,3 +18,15 @@
     </a>
 </nav>
 {{ end }}
+
+
+{{ block "NoteDispElem" . }}
+<div id="note_.Id">
+    <h3>.Title</h3>
+    <p>.Text</p>
+
+    {{ range .Tags}}
+    <p>.Tags</p>
+    {{ end }}
+</div>
+{{ end }}
